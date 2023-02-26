@@ -129,3 +129,4 @@ Commit #127 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #128 | Meme: Works on my machine! ¯\_(ツ)_/¯
 Commit #129 | Meme: Works on my machine! ¯\_(ツ)_/¯
 Commit #130 | Meme: Why do Java developers wear glasses? Because they don't C#.
+Commit #131 | Meme: A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'
