@@ -41,3 +41,4 @@ Commit #39 | Meme: There are 10 types of people: those who understand binary, an
 Commit #40 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
 Commit #41 | Meme: There are 10 types of people: those who understand binary, and those who don't.
 Commit #42 | Meme: There's no place like 127.0.0.1
+Commit #43 | Meme: Real programmers count from 0.
