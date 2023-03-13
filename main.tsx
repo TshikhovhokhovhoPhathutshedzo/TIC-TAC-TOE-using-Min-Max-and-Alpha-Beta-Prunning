@@ -110,3 +110,4 @@ Commit #108 | Meme: It's not a bug, it's an undocumented feature.
 Commit #109 | Meme: It's not a bug, it's an undocumented feature.
 Commit #110 | Meme: Programming is 10% writing code and 90% understanding why it's not working.
 Commit #111 | Meme: My code doesn't work, I have no idea why. My code works, I have no idea why.
+Commit #112 | Meme: Why do Java developers wear glasses? Because they don't C#.
