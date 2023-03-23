@@ -160,3 +160,4 @@ Commit #158 | Meme: Software and cathedrals are much the same – first we build
 Commit #159 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
 Commit #160 | Meme: My code doesn't work, I have no idea why. My code works, I have no idea why.
 Commit #161 | Meme: My code doesn't work, I have no idea why. My code works, I have no idea why.
+Commit #162 | Meme: Why do Java developers wear glasses? Because they don't C#.
