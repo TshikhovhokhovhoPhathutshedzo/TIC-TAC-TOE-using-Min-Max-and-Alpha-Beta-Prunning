@@ -60,3 +60,4 @@ Commit #58 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers
 Commit #59 | Meme: There's no place like 127.0.0.1
 Commit #60 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #61 | Meme: Why do Java developers wear glasses? Because they don't C#.
+Commit #62 | Meme: Hide and seek champion since 1958: ';' in C/C++
