@@ -153,3 +153,4 @@ Commit #151 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #152 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #153 | Meme: Programming is 10% writing code and 90% understanding why it's not working.
 Commit #154 | Meme: In case of fire: git commit, git push, leave building.
+Commit #155 | Meme: 99 little bugs in the code. Take one down, patch it around. 127 little bugs in the code.
