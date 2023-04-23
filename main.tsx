@@ -30,3 +30,4 @@ Commit #28 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers
 Commit #29 | Meme: Hide and seek champion since 1958: ';' in C/C++
 Commit #30 | Meme: My code doesn't work, I have no idea why. My code works, I have no idea why.
 Commit #31 | Meme: Works on my machine! ¯\_(ツ)_/¯
+Commit #32 | Meme: Real programmers count from 0.
