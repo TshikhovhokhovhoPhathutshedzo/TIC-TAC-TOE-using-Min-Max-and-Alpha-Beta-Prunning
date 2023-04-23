@@ -147,3 +147,4 @@ Commit #145 | Meme: A SQL query walks into a bar, walks up to two tables and ask
 Commit #146 | Meme: There's no place like 127.0.0.1
 Commit #147 | Meme: In case of fire: git commit, git push, leave building.
 Commit #148 | Meme: It's not a bug, it's an undocumented feature.
+Commit #149 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard.
