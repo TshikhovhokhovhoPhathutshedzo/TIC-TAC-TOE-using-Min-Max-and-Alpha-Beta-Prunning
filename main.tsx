@@ -134,3 +134,4 @@ Commit #132 | Meme: My code doesn't work, I have no idea why. My code works, I h
 Commit #133 | Meme: There's no place like 127.0.0.1
 Commit #134 | Meme: Deleting code is better than writing code.
 Commit #135 | Meme: Why do Java developers wear glasses? Because they don't C#.
+Commit #136 | Meme: There are 10 types of people: those who understand binary, and those who don't.
