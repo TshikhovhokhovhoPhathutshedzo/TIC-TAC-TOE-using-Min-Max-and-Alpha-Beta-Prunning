@@ -83,3 +83,4 @@ Commit #81 | Meme: A SQL query walks into a bar, walks up to two tables and asks
 Commit #82 | Meme: git commit -m 'fixed stuff' (narrator: it was not fixed)
 Commit #83 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard.
 Commit #84 | Meme: Works on my machine! ¯\_(ツ)_/¯
+Commit #85 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
