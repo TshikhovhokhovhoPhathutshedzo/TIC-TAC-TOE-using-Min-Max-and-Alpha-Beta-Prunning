@@ -128,3 +128,4 @@ Commit #126 | Meme: Software and cathedrals are much the same – first we build
 Commit #127 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #128 | Meme: Works on my machine! ¯\_(ツ)_/¯
 Commit #129 | Meme: Works on my machine! ¯\_(ツ)_/¯
+Commit #130 | Meme: Why do Java developers wear glasses? Because they don't C#.
