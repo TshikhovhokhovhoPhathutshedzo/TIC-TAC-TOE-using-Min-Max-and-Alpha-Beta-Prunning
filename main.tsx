@@ -93,3 +93,4 @@ Commit #91 | Meme: Hide and seek champion since 1958: ';' in C/C++
 Commit #92 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #93 | Meme: Deleting code is better than writing code.
 Commit #94 | Meme: It's not a bug, it's an undocumented feature.
+Commit #95 | Meme: It's not a bug, it's an undocumented feature.
