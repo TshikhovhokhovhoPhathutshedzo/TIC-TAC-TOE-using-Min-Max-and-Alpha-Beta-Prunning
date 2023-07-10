@@ -96,3 +96,4 @@ Commit #94 | Meme: It's not a bug, it's an undocumented feature.
 Commit #95 | Meme: It's not a bug, it's an undocumented feature.
 Commit #96 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #97 | Meme: A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'
+Commit #98 | Meme: It's not a bug, it's an undocumented feature.
