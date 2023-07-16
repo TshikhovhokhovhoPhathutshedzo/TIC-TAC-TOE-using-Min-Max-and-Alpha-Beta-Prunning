@@ -117,3 +117,4 @@ Commit #115 | Meme: My code doesn't work, I have no idea why. My code works, I h
 Commit #116 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #117 | Meme: Programming is 10% writing code and 90% understanding why it's not working.
 Commit #118 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
+Commit #119 | Meme: Why do Java developers wear glasses? Because they don't C#.
