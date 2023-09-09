@@ -81,3 +81,4 @@ Commit #79 | Meme: It's not a bug, it's an undocumented feature.
 Commit #80 | Meme: There are 10 types of people: those who understand binary, and those who don't.
 Commit #81 | Meme: A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'
 Commit #82 | Meme: git commit -m 'fixed stuff' (narrator: it was not fixed)
+Commit #83 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard.
