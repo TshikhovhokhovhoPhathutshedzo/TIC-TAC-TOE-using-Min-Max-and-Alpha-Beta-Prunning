@@ -22,3 +22,4 @@ Commit #20 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers
 Commit #21 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
 Commit #22 | Meme: Programming is 10% writing code and 90% understanding why it's not working.
 Commit #23 | Meme: Works on my machine! ¯\_(ツ)_/¯
+Commit #24 | Meme: There are 10 types of people: those who understand binary, and those who don't.
