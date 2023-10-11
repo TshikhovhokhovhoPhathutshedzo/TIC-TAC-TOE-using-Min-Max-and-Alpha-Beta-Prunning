@@ -125,3 +125,4 @@ Commit #123 | Meme: There's no place like 127.0.0.1
 Commit #124 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
 Commit #125 | Meme: 99 little bugs in the code. Take one down, patch it around. 127 little bugs in the code.
 Commit #126 | Meme: Software and cathedrals are much the same – first we build them, then we pray.
+Commit #127 | Meme: Why do Java developers wear glasses? Because they don't C#.
