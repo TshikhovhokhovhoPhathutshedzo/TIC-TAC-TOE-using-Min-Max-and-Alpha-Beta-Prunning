@@ -136,3 +136,4 @@ Commit #134 | Meme: Deleting code is better than writing code.
 Commit #135 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #136 | Meme: There are 10 types of people: those who understand binary, and those who don't.
 Commit #137 | Meme: A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'
+Commit #138 | Meme: Programming is 10% writing code and 90% understanding why it's not working.
