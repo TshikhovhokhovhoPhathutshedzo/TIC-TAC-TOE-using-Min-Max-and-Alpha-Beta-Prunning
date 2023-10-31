@@ -53,3 +53,4 @@ Commit #51 | Meme: There are 10 types of people: those who understand binary, an
 Commit #52 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #53 | Meme: My code doesn't work, I have no idea why. My code works, I have no idea why.
 Commit #54 | Meme: There are 10 types of people: those who understand binary, and those who don't.
+Commit #55 | Meme: A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard.
