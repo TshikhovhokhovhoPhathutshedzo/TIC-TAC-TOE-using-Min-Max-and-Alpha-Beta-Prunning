@@ -77,3 +77,4 @@ Commit #75 | Meme: There are 10 types of people: those who understand binary, an
 Commit #76 | Meme: In case of fire: git commit, git push, leave building.
 Commit #77 | Meme: Why do Java developers wear glasses? Because they don't C#.
 Commit #78 | Meme: Works on my machine! ¯\_(ツ)_/¯
+Commit #79 | Meme: It's not a bug, it's an undocumented feature.
