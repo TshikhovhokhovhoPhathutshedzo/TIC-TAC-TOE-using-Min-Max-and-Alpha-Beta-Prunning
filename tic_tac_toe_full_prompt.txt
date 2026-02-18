@@ -1,0 +1,216 @@
+
+Project Title: Interactive Tic-Tac-Toe Game with an AI Opponent (Minimax-based, efficient, and optionally extensible to learning)
+
+High-level Summary:
+Build a fully functional, interactive Tic-Tac-Toe game (3x3) that runs in a modern environment (web browser recommended, but desktop or mobile-native alternatives acceptable). The opponent must use the Minimax algorithm (with alpha-beta pruning) for efficient, optimal play. Where the brief says "learns and improves", explain that Minimax itself is not a learning algorithm but yields perfect play; provide optional extensions (self-play logging, heuristic tuning, or a lightweight RL/self-play agent) to simulate "learning" over time while maintaining the Minimax core.
+
+Primary Goals:
+- Simplicity and clarity of UI/UX — intuitive, responsive interface.
+- Algorithmic efficiency: correct Minimax with alpha-beta pruning, iterative deepening and caching.
+- Code quality: structured, documented, testable, and easily maintainable.
+- Extensibility: provide hooks for adding alternative AI agents (RL, neural network, MCTS, heuristics).
+- Accessibility and cross-browser compatibility (if web-based).
+
+Deliverables:
+1. Source code repository with clear commit history and meaningful commit messages.
+2. README with setup, run, test, and deploy instructions.
+3. Runnable app (web: localhost dev server; desktop: executable or instructions).
+4. Unit and integration tests covering game rules, AI decision correctness, and UI interactions.
+5. Documentation on the AI algorithm design (explain how Minimax, alpha-beta pruning, move ordering, caching is implemented).
+6. Optional: lightweight "learning" mechanism (self-play logs, statistical heuristic adjustments, or simple Q-table) and instructions for how to run it.
+7. A build artifact (production bundle, installer, or packaged app).
+
+Target Platforms (choose one or more; indicate which in the prompt to the agent):
+- Web: React + TypeScript preferred. Vanilla JS/HTML/CSS acceptable for minimal solution.
+- Desktop: Electron (JS), or Python + Tkinter/PyQt.
+- Mobile: React Native or Flutter (only if requested).
+
+Recommended Tech Stack (web-first):
+- Frontend: React + TypeScript, Vite or Create React App.
+- Styling: Tailwind CSS or simple CSS Modules; keep visuals minimal and accessible.
+- State management: local component state + small context/state hook if needed.
+- Testing: Jest + React Testing Library for UI; unit tests for algorithm logic with plain Jest.
+- Tooling: ESLint, Prettier, TypeScript strict mode, Husky pre-commit hooks (optional).
+- Build & Deploy: GitHub Actions workflow for tests and build (optional).
+
+Functional Requirements:
+1. Game Rules:
+   - Standard 3x3 board.
+   - Two players: Human vs AI, Human vs Human (local pass-and-play), AI vs AI (self-play mode).
+   - Players place marks (X and O) on empty squares; X goes first by default (configurable).
+   - Detect win (3 in a row), draw, and illegal moves.
+   - Reset and undo last move (optional but recommended).
+   - Show move history and optionally highlight the winning line.
+
+2. AI (Core):
+   - Minimax algorithm implementing full game-tree search to terminal states.
+   - Alpha-Beta pruning implemented to reduce explored nodes.
+   - Minimax must return an optimal move for the AI (never loses if plays first or second).
+   - Performance optimizations: move ordering (prefer center, corners), transposition table / memoization (Zobrist hashing optional), iterative deepening (for larger board variants), and cutoff heuristics (not necessary for 3x3 but implementable).
+   - Option to configure AI difficulty: 
+       - "Perfect" = full Minimax.
+       - "Medium" = Minimax with random move chosen with some probability or limited search depth.
+       - "Easy" = purely random or restricted heuristic.
+
+3. Learning (Optional / Extension):
+   - Explain that Minimax itself doesn't learn; provide one or more of:
+       a) Self-play logging: record games played (state-action pairs and outcomes) to a file/localStorage. Use logs to compute move success rates and bias move ordering or heuristics.
+       b) Simple Q-learning agent: tabular Q-learning for Tic-Tac-Toe with epsilon-greedy; can train via self-play to produce a second AI option. Keep training script separate from main UI to avoid blocking.
+       c) Neural network policy/value network: overkill for Tic-Tac-Toe but mention optional integration with saved weights.
+   - Provide commands/scripts for training, and how to load produced policy into the app.
+
+4. UI/UX:
+   - Minimal, responsive layout with a 3x3 grid and clear indicators for current player, score, and game state.
+   - Keyboard and touch support: allow keyboard navigation and Enter to place mark (accessibility).
+   - Visual indicators: hover, selected square, winning line highlight.
+   - Controls: New Game, Undo, Change Sides (player chooses X/O), Difficulty select, Mode select (Human vs AI, H vs H, AI vs AI), Show AI thinking delay toggle.
+   - Accessibility: high contrast colors, ARIA labels, semantic HTML for screen readers.
+
+5. Testing and Validation:
+   - Unit tests for:
+       - Game state transitions (move application, undo).
+       - Win/draw detection across all win lines.
+       - Minimax correctness verification against small hand-crafted positions and expected optimal moves.
+   - Integration tests:
+       - Simulate play sequences to confirm UI updates and result displays.
+   - Performance tests:
+       - Measure node expansions for Minimax and confirm alpha-beta reduces search nodes.
+   - CI pipeline runs tests on push and PR.
+
+Non-functional Requirements:
+- Performance: Minimax must run instantly in the browser for 3x3; if any delay >100ms introduce a "thinking" indicator.
+- Security: No remote code execution; if storing logs in localStorage or files, ensure privacy notice.
+- Maintainability: Clear separation between game logic (engine) and UI. Engine should be framework-agnostic and exportable as a library/module.
+- Extensibility: Allow swapping AI agents by implementing an AI interface (function getMove(gameState, player): Move).
+
+API / Module Interface (example):
+- GameEngine:
+    - new GameEngine(config?)
+    - getAvailableMoves(state)
+    - applyMove(state, move)
+    - undoMove()
+    - isTerminal(state) -> { winner: 'X'|'O'|null, draw: bool }
+    - cloneState(state)
+    - toKey(state) // for memoization
+
+- AI Interface:
+    - getMove(state, player, options) -> { index: 0..8, score: number, nodesExpanded: int }
+    - train?(trainingOptions) -> Promise (optional)
+
+Algorithm Details (to include in the implementation prompt):
+1. Minimax pseudocode:
+    - function minimax(state, depth, isMaximizingPlayer, alpha, beta):
+        if terminal(state) return evaluateTerminal(state)
+        if isMaximizingPlayer:
+            best = -Infinity
+            for move in orderedMoves(state):
+                apply move
+                val = minimax(newState, depth+1, false, alpha, beta)
+                undo move
+                best = max(best, val)
+                alpha = max(alpha, best)
+                if beta <= alpha: break
+            return best
+        else:
+            similar for minimizing player
+    - evaluateTerminal returns +1 for AI win, -1 for AI loss, 0 for draw.
+
+2. Move ordering heuristic (for 3x3):
+    - Preferred move order: center (4), corners [0,2,6,8], edges [1,3,5,7].
+    - For performance, order moves by potential immediate win/block.
+
+3. Memoization / Transposition Table:
+    - Use a Map keyed by canonical board representation (e.g. string "X_OX__O_X") or Zobrist hash.
+    - Store best score for state and optionally best move.
+
+4. Randomization for non-determinism in equal-score moves.
+
+Project Structure (example for React + TypeScript):
+/src
+  /engine
+    gameEngine.ts         // pure game logic (rules)
+    minimax.ts            // minimax implementation
+    aiInterfaces.ts       // AI interface definitions
+    selfPlayTrainer.ts    // optional trainer scripts
+  /components
+    Board.tsx
+    Square.tsx
+    Controls.tsx
+    Scoreboard.tsx
+    Modal.tsx
+  /hooks
+    useGame.ts
+  index.tsx
+  App.tsx
+/tests
+  engine.test.ts
+  minimax.test.ts
+  ui.test.ts
+/public
+  index.html
+package.json
+README.md
+
+Testing Scenarios & Acceptance Criteria:
+- Human vs AI: AI should not lose when playing perfect mode. Validate via scripted matches.
+- Draw cases: ensure board fills with no winner.
+- Illegal moves: blocked and reported (should not crash).
+- Undo/Reset: game state restored correctly.
+- Difficulty: Easy occasionally loses, Medium is improvable, Perfect never loses.
+- Accessibility checks: ARIA attributes, keyboard navigation, color-contrast ratio passing WCAG AA.
+
+Logging and Metrics (optional):
+- Track games played, moves evaluated per AI decision, average nodes expanded, average decision time.
+- For learning extension: log states and outcomes to local JSON or localStorage.
+
+Documentation (what must be included in README):
+- Project purpose and high-level design.
+- Prerequisites (Node.js version, Python etc. if training scripts).
+- Setup steps (install dependencies, run dev server).
+- How to play and configure AI difficulty.
+- How the Minimax algorithm works and where to find it in code.
+- How to run tests and linting.
+- How to add new AI agents and where to hook them in.
+- Licensing and contributor guidelines.
+
+Implementation Constraints and Recommendations:
+- Keep game engine pure and decoupled from UI for easy testing.
+- Keep AI decisions synchronous but non-blocking for the UI (wrap heavy computations in setTimeout or Web Worker if needed).
+- Prefer deterministic behavior for tests; provide an option to seed randomness for reproducible tests.
+- Keep bundle size small; do not add heavy ML libraries unless explicitly requested.
+
+Acceptance Example (minimal):
+- Start app, choose "Human vs AI", set AI to "Perfect", human plays first: AI always forces a draw or wins; no illegal moves; UI updates correctly and displays "Draw" when appropriate.
+
+Extras (nice-to-have):
+- Move highlighting and suggested move preview.
+- Play-by-play commentary (explain why AI chose a move).
+- Save and load game state.
+- Two-player online mode (requires backend via WebSocket; out of scope unless requested).
+- Theme toggle (light/dark).
+
+Security and Privacy:
+- If storing training logs or game histories, store locally (localStorage or local files). Do not send logs to remote servers without explicit consent.
+- Validate any user input (if multiplayer networked) to avoid injection or malicious moves.
+
+Time & Resource Estimates (for planning only; optional):
+- Minimal working web app (single developer, full-time): 1–2 days.
+- Production-ready with tests, CI, and training extension: 3–5 days.
+
+Instructions for the Advanced AI Coding Agent:
+1. Produce a CI-tested repository that implements the above deliverables.
+2. Start by implementing the pure GameEngine and comprehensive unit tests for all rules.
+3. Implement Minimax with alpha-beta pruning next, and create tests that verify optimal moves at key positions.
+4. Build the UI and connect it to the engine; keep UI and engine decoupled.
+5. Add difficulty levels and optional learning components as separate modules/scripts.
+6. Provide a script or workflow to run quick automated matches to demonstrate AI correctness.
+7. Document everything in README and deliver build artifacts.
+
+Acceptance Criteria (explicit):
+- The app runs locally with a single command (e.g., `npm install && npm run dev`).
+- Tests pass (`npm test`).
+- Minimax returns optimal moves and completes decisions without blocking UI (or uses a worker).
+- README clearly explains installation, running, testing, and training (if included).
+- The codebase follows the module layout and contains the engine/AI separation.
+
+End of Prompt.

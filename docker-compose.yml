@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  tic-tac-toe:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
